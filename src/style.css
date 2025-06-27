@@ -29,6 +29,276 @@ ion-icon {
   --ionicon-stroke-width: 50px;
 }
 
+.img-holder {
+  @apply overflow-hidden;
+  aspect-ratio: var(--width) / var(--height);
+}
+
+.img-cover {
+  @apply object-cover
+         size-full;
+}
+
 /* ------------ *\
-  # CUSTOM STYLES
+  # COMPONENTS
 \* ------------ */
+
+/**
+  * DROPDOWN
+  */
+
+.dropdown {
+  @apply relative;
+}
+
+.dropdown-content {
+  @apply text-alabaster
+         border-amber_alpha
+         border-solid
+         border-b
+         h-0
+         px-5
+         space-y-1
+         text-sm
+         transition-all
+         duration-200
+         ease-inExpo
+         invisible
+         /* responsive for md:1000px screen */
+         md:bg-papaya_whip
+         md:text-jet
+         md:absolute
+         md:-left-8
+         md:top-10
+         md:min-w-[125px]
+         md:space-y-1
+         md:rounded-md
+         md:shadow-sm
+         /* responsive for xxl:1600px screen */
+         xxl:text-lg
+         xxl:min-w-40;
+
+  clip-path: inset(0 0 100% 0);
+}
+
+.dropdown.active .dropdown-content {
+  @apply h-[184px]
+         visible
+         /* responsive for xxl:1600px screen */
+         xxl:h-60;
+
+  clip-path: inset(0 0 0 0);
+}
+
+.navbar-link:has(~ .dropdown.active) ion-icon {
+  @apply rotate-90;
+}
+
+.dropdown-content a {
+  @apply transition-colors
+         /* :hover */
+         hover:text-butterscotch;
+}
+
+/**
+  * BUTTON
+  */
+
+.btn {
+  @apply text-white
+         font-bold
+         uppercase
+         tracking-widest
+         text-sm
+         max-w-max
+         rounded-md
+         duration-200
+         /* :hover */
+         hover:shadow-lg
+}
+
+.btn-text {
+  @apply text-caf_noir
+         ring-butterscotch
+         ring-1
+         /* :hover */
+         hover:shadow-lg;
+}
+
+/* ------------ *\
+  # HEADER
+\* ------------ */
+
+.header {
+  @apply bg-caf_noir
+         fixed
+         left-0
+         top-0
+         z-30
+         h-20
+         w-full
+         duration-200
+         ease-inExpo
+         /* responsive for lg:1200px screen */
+         lg:bg-transparent;
+}
+
+.header.active {
+  @apply shadow-shadowDark
+         animate-fadeInDown
+         /* responsive for lg:1200px screen */
+         lg:bg-caf_noir;
+}
+
+.header .container {
+  /* responsive for lg:1200px screen */
+  @apply lg:mx-0
+         lg:w-2/4
+         lg:max-w-[calc(100%_-_600px)]
+         lg:py-7
+         lg:px-7
+         /* responsive for xl:1400px screen */
+         xl:w-full
+         xl:max-w-[calc(100%_-_666px)]
+         /* responsive for xxl:1600px screen */
+         xxl:grid
+         xxl:grid-cols-3
+         xxl:mx-auto
+         xxl:max-w-[1650px];
+}
+
+.navbar {
+  @apply bg-licorice
+         fixed
+         right-0
+         top-0
+         z-50
+         h-screen
+         w-80
+         translate-x-80
+         pt-20
+         duration-200
+         ease-inExpo
+         invisible;
+}
+
+@media (min-width: 1000px) {
+  .navbar {
+    all: unset;
+  }
+}
+
+.navbar.active {
+  @apply visible
+         translate-x-0;
+}
+
+.nav-close-btn {
+  @apply text-alabaster
+         absolute
+         top-5
+         right-3
+         grid
+         place-items-center
+         text-[28px]
+         size-10
+         /* responsive for md:1000px screen */
+         md:hidden;
+}
+
+.navbar-link {
+  @apply text-alabaster
+         border-amber_alpha
+         border-solid
+         border-b
+         px-3
+         py-5
+         font-bold
+         uppercase
+         cursor-pointer
+         transition-colors
+         /* :hover */
+         hover:text-butterscotch
+         /* responsive for md:1000px screen */
+         md:border-b-0
+         md:p-0
+         /* responsive for xxl:1600px screen */
+         xxl:text-xl;
+}
+
+/**
+  * CART
+  */
+
+.cart-toggler {
+  @apply relative
+         grid
+         size-10
+         place-items-center
+         rounded-full
+         /* ::before */
+         before:text-papaya_whip
+         before:bg-red
+         before:content-['2']
+         before:absolute
+         before:right-0
+         before:top-0
+         before:z-10
+         before:size-5
+         before:rounded-full
+         before:text-sm
+         before:font-semibold
+         /* responsive for lg:1200px screen */
+         lg:bg-caf_noir;
+}
+
+.cart-modal {
+  @apply fixed
+         top-24
+         right-2
+         max-w-72
+         rounded-lg
+         px-2
+         py-3
+         z-20
+         shadow-[0_-4px_0_#dd9d4cff]
+         origin-top
+         duration-75
+         ease-inExpo
+         invisible
+         opacity-0
+         /* responsive for sm:635px screen */
+         sm:right-14;
+
+  background: linear-gradient(359deg, #fde6b9, #fff3dcff);
+}
+
+.cart-modal.active {
+  @apply visible
+         opacity-100
+         translate-y-0.5;
+}
+
+.cart-modal .material-symbols-rounded {
+  font-variation-settings: "opsz" 20;
+}
+
+/**
+  * OVERLAY
+  */
+
+.overlay {
+  @apply fixed
+         inset-0
+         z-40
+         ease-inExpo
+         duration-75
+         invisible
+         opacity-0
+}
+
+.overlay.active {
+  @apply visible
+         opacity-100
+         backdrop-blur-sm;
+}

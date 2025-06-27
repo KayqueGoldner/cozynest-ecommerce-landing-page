@@ -43,6 +43,213 @@
     <script src="./assets/js/script.js" defer></script>
   </head>
   <body class="bg-papaya_whip text-jet font-secondary">
+    <!-- header -->
+    <header class="header" data-header>
+      <div
+        class="container relative flex justify-between items-center px-3 py-5 mx-auto"
+      >
+        <a href="/" class="logo">
+          <img
+            src="./assets/images/logo-light.svg"
+            alt="cozynest logo"
+            width="129"
+            height="16"
+            class="xxl:w-40"
+          />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <button
+            class="nav-close-btn"
+            aria-label="close menu"
+            data-nav-toggler
+          >
+            <span class="material-symbols-rounded" aria-hidden="true">
+              close
+            </span>
+          </button>
+
+          <ul class="md:flex md:items-center md:gap-3 xl:gap-7">
+            <li>
+              <a href="#home" class="navbar-link">Home</a>
+            </li>
+
+            <li>
+              <button
+                class="navbar-link flex items-center gap-2 min-w-full"
+                aria-label="shop"
+                data-dropdown-toggler
+              >
+                Shop
+                <ion-icon
+                  name="caret-forward-outline"
+                  aria-hidden="true"
+                  class="duration-200"
+                ></ion-icon>
+              </button>
+
+              <div class="dropdown" data-dropdown>
+                <div class="dropdown-content">
+                  <a href="#" class="pt-2">All Products</a>
+                  <a href="#" class="">Clothing</a>
+                  <a href="#" class="">Candles</a>
+                  <a href="#" class="">Accessories</a>
+                  <a href="#" class="">Bags</a>
+                  <a href="#" class="">Clocks</a>
+                  <a href="#" class="pb-2">Sale 🏷️</a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <a href="#blog" class="navbar-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#latest" class="navbar-link">Latest</a>
+            </li>
+
+            <li>
+              <a href="#info" class="navbar-link">Info</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div
+          class="rounded-md overflow-hidden flex items-center gap-3 lg:fixed lg:top-5 lg:right-5"
+        >
+          <button
+            class="cart-toggler"
+            aria-label="cart toggler"
+            data-cart-toggler
+          >
+            <span
+              class="material-symbols-rounded text-papaya_whip"
+              aria-hidden="true"
+            >
+              shopping_cart_checkout
+            </span>
+          </button>
+
+          <div class="relative">
+            <div class="cart-modal" data-cart-modal>
+              <ul>
+                <li class="flex gap-2 pr-2">
+                  <figure
+                    class="img-holder size-20 rounded-md shrink-0"
+                    style="--width: 80; --height: 80"
+                  >
+                    <img
+                      src="./assets/images/cart-1.jpg"
+                      width="80"
+                      height="80"
+                      alt="Handmade painted coffee mug"
+                      loading="lazy"
+                      class="img-cover"
+                    />
+                  </figure>
+
+                  <div>
+                    <span class="text-caf_noir text-sm font-bold">
+                      Handmade painted coffee mug
+                    </span>
+
+                    <div class="flex items-center gap-1 text-[13px]">
+                      <p>1 ×</p>
+
+                      <p>$85.00</p>
+                    </div>
+                  </div>
+
+                  <button
+                    class="size-5 shrink-0 mb-auto"
+                    aria-label="remove product"
+                  >
+                    <span class="material-symbols-rounded" aria-hidden="true">
+                      close
+                    </span>
+                  </button>
+                </li>
+
+                <div class="h-px w-full my-3 bg-butterscotch_light"></div>
+
+                <li class="flex gap-2 pr-2">
+                  <figure
+                    class="img-holder size-20 rounded-md shrink-0"
+                    style="--width: 80; --height: 80"
+                  >
+                    <img
+                      src="./assets/images/cart-2.jpg"
+                      width="80"
+                      height="80"
+                      alt="Vintage Antique & Candle Holder"
+                      loading="lazy"
+                      class="img-cover"
+                    />
+                  </figure>
+
+                  <div>
+                    <span class="text-caf_noir text-sm font-bold">
+                      Vintage Antique & Candle Holder
+                    </span>
+
+                    <div class="flex items-center gap-1 text-[13px]">
+                      <p>1 ×</p>
+
+                      <p>$990.00</p>
+                    </div>
+                  </div>
+
+                  <button
+                    class="size-5 shrink-0 mb-auto"
+                    aria-label="remove product"
+                  >
+                    <span class="material-symbols-rounded" aria-hidden="true">
+                      close
+                    </span>
+                  </button>
+                </li>
+
+                <div class="h-px w-full my-3 bg-butterscotch_light"></div>
+
+                <div class="flex justify-center items-center gap-2">
+                  <a
+                    href="#"
+                    class="btn bg-butterscotch_light py-3 px-4"
+                    aria-label="checkout"
+                    >Checkout</a
+                  >
+
+                  <a
+                    href="#"
+                    class="btn btn-text py-3 px-4"
+                    aria-label="view cart"
+                  >
+                    View Cart
+                  </a>
+                </div>
+              </ul>
+            </div>
+          </div>
+
+          <button
+            class="size-10 grid place-items-center md:hidden"
+            aria-label="toggle menu"
+            data-nav-toggler
+          >
+            <span
+              class="material-symbols-rounded text-papaya_whip"
+              aria-hidden="true"
+            >
+              menu
+            </span>
+          </button>
+        </div>
+
+        <div class="overlay" data-overlay data-nav-toggler></div>
+      </div>
+    </header>
+
     <!-- ionicon link -->
     <script
       type="module"
