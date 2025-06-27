@@ -294,11 +294,55 @@ ion-icon {
          ease-inExpo
          duration-75
          invisible
-         opacity-0
+         opacity-0;
 }
 
 .overlay.active {
   @apply visible
          opacity-100
          backdrop-blur-sm;
+}
+
+/* ------------ *\
+  # HERO
+\* ------------ */
+
+.hero {
+  @apply bg-caf_noir
+         relative
+         pt-20;
+}
+
+@media (min-width: 1200px) {
+  .hero::before {
+    all: unset;
+  }
+}
+
+.hero .container {
+  /* responsive for lg:1200px screen */
+  @apply lg:grid
+         lg:grid-cols-2;
+}
+
+.hero-banner {
+  @apply absolute
+         inset-0
+         /* responsive for lg:1200px screen */
+         lg:left-auto
+         lg:max-w-[50%];
+}
+
+.brand-list::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.brand-list-item {
+  @apply grid
+         place-content-center
+         p-2
+         h-14
+         min-w-32
+         rounded-md
+         cursor-pointer
 }
