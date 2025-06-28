@@ -125,6 +125,24 @@ ion-icon {
          hover:shadow-lg;
 }
 
+/**
+  * CARD
+  */
+
+.card {
+  @apply bg-cover
+         bg-no-repeat
+         bg-center
+         rounded-md
+         min-h-[219px]
+         py-5
+         px-5
+         /* responsive for md:1000px screen */
+         md:min-h-[360px]
+         /* responsive for lg:1200px screen */
+         lg:min-h-[219px]
+}
+
 /* ------------ *\
   # HEADER
 \* ------------ */
