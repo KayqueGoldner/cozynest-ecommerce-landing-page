@@ -143,6 +143,78 @@ ion-icon {
          lg:min-h-[219px]
 }
 
+/**
+  * SLIDER
+  */
+
+.slider {
+  @apply relative
+         overflow-hidden;
+}
+
+.slider-item {
+  @apply bg-papaya_whip
+         absolute
+         top-0
+         left-0
+         overflow-hidden;
+
+  transition: left 0.5s cubic-bezier(0.645, 0.045, 0.354, 1);
+}
+
+.slider-item:nth-child(1) {
+  @apply left-[calc(-260px_+_-20px)];
+}
+
+.slider-item:nth-child(2) {
+  @apply left-0;
+}
+
+.slider-item:nth-child(3) {
+  @apply left-[calc(260px_+_20px)];
+}
+
+.slider-item:nth-child(4) {
+  @apply left-[calc((260px_+_20px)_*_2)];
+}
+
+.slider-item:nth-child(5) {
+  @apply left-[calc((260px_+_20px)_*_3)];
+}
+
+.slider-item:nth-child(6) {
+  @apply left-[calc((260px_+_20px)_*_4)];
+}
+
+.slider-item:nth-child(7) {
+  @apply left-[calc((260px_+_20px)_*_5)];
+}
+
+.slider-item:nth-child(8) {
+  @apply left-[calc((260px_+_20px)_*_6)];
+}
+
+.slider-item:nth-child(9) {
+  @apply left-[calc((260px_+_20px)_*_7)];
+}
+
+.slider-item:nth-child(10) {
+  @apply left-[calc((260px_+_20px)_*_8)];
+}
+
+/* arrow button */
+
+.arrow-button {
+  @apply size-10
+         grid
+         place-items-center
+         border
+         border-solid
+         border-butterscotch
+         rounded-sm;
+         
+}
+
 /* ------------ *\
   # HEADER
 \* ------------ */
@@ -362,5 +434,5 @@ ion-icon {
          h-14
          min-w-32
          rounded-md
-         cursor-pointer
+         cursor-pointer;
 }

@@ -70,3 +70,57 @@ const activeHeader = function () {
 };
 
 window.addEventListener("scroll", activeHeader);
+
+// custom slider
+const $sliderContainers = document.querySelectorAll("[data-slider-container]");
+
+/**
+ * Initializes the slider functionality for a given slider container
+ * @param {Element} $sliderContainer - The slider container element
+ * @example
+ * // Initialize slider for a specific container
+ * sliderInitial(document.querySelector("[data-slider-container]"));
+ */
+const sliderInitial = function ($sliderContainer) {
+  const $slider = $sliderContainer.querySelector("[data-slider]");
+  const $prevBtn = $sliderContainer.querySelector("[data-prev-btn]");
+  const $nextBtn = $sliderContainer.querySelector("[data-next-btn]");
+
+  function nextSlide() {
+    $slider.appendChild($slider.firstElementChild);
+  }
+  $nextBtn.addEventListener("click", nextSlide);
+
+  function prevSlide() {
+    $slider.prepend($slider.lastElementChild);
+  }
+  $prevBtn.addEventListener("click", prevSlide);
+
+  let autoSlideIntervalId;
+
+  function autoSlide() {
+    autoSlideIntervalId = setInterval(function () {
+      nextSlide();
+    }, 3000);
+  }
+
+  autoSlide();
+
+  function deleteAutoSliding() {
+    clearInterval(autoSlideIntervalId);
+  }
+
+  // stop auto slide when mouseover
+  $slider.addEventListener("mouseover", deleteAutoSliding);
+  $prevBtn.addEventListener("mouseover", deleteAutoSliding);
+  $nextBtn.addEventListener("mouseover", deleteAutoSliding);
+
+  // start auto slide when mouseout
+  $slider.addEventListener("mouseout", autoSlide);
+  $prevBtn.addEventListener("mouseout", autoSlide);
+  $nextBtn.addEventListener("mouseout", autoSlide);
+};
+
+for (let i = 0; i < $sliderContainers.length; i++) {
+  sliderInitial($sliderContainers[i]);
+}
