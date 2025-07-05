@@ -39,6 +39,12 @@ ion-icon {
          size-full;
 }
 
+.grid-list > li:nth-child(even):not(.off-card) {
+  @apply ms-auto
+         /* responsive for sm:635px screen */
+         sm:ms-0;
+}
+
 /* ------------ *\
   # COMPONENTS
 \* ------------ */
