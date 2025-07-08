@@ -221,6 +221,16 @@ ion-icon {
          
 }
 
+/**
+  * Avatar
+  */
+
+.avatar {
+  @apply size-12
+         rounded-full
+         shrink-0;
+}
+
 /* ------------ *\
   # HEADER
 \* ------------ */
@@ -441,4 +451,50 @@ ion-icon {
          min-w-32
          rounded-md
          cursor-pointer;
+}
+
+/* ------------ *\
+  # TESTIMONIALS
+\* ------------ */
+
+.testimonial-card:nth-child(1) {
+  @apply left-[calc(-450px_+_-20px)]
+         /* responsive for sm:635px screen */
+         sm:left-[calc(-580px_+_-30px)]
+         /* responsive for md:1000px screen */
+         md:left-[calc(-756px_+_-30px)];
+}
+
+.testimonial-card:nth-child(2) {
+  @apply left-0;    
+}
+
+.testimonial-card:nth-child(3) {
+  @apply left-[calc(450px_+_20px)]
+         /* responsive for sm:635px screen */
+         sm:left-[calc(580px_+_30px)]
+         /* responsive for md:1000px screen */
+         md:left-[calc(756px_+_30px)];
+}
+
+.testimonial-card:nth-child(4) {
+  @apply left-[calc((450px_+_20px)_*_2)]
+         /* responsive for sm:635px screen */
+         sm:left-[calc((580px_+_30px)_*_2)]
+         /* responsive for md:1000px screen */
+         md:left-[calc((756px_+_30px)_*_2)];
+}
+
+/* ------------ *\
+  # PARALLAX
+\* ------------ */
+
+.parallax {
+  @apply min-h-[300px]
+         bg-fixed
+         bg-center
+         bg-cover
+         bg-no-repeat
+         /* responsive for xl:1400px screen */
+         xl:min-h-96;
 }
